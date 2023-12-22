@@ -123,6 +123,11 @@ Questions:
 
 2. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) in 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. How do the particles move in the phase space turn after turn? Do you see the tunes? Do you see any difference between the two particles? It may help to look only at the first 4 turns to get a clear picture.
 
+		track, dump, file = name, deltap = ??;
+		start, x = ??, px = ?? , y = ??, py = ??;
+		start, x = ??, px = ?? , y = ??, py = ??;
+		run, turns = 100;
+		
 3. Repeat the tracking exercise but now for two of-momentum particles by adding a $\Delta p/p = 10^{-2}$ to the initial particles' conditions. How does the phase space look now? Is the tune still the same?
 
 ## Tutorial 5: Chromaticity correction and non-linearities
@@ -148,16 +153,23 @@ Questions:
 Figure 7: FODO cell with dipoles and sextupoles scheme.
 </p>
 
+In order to install the sextupoles in the lattice, first define the new element with the appropriate MAD-X command:
+
+	 sm : sextupole, k2 = ??, l = ??; 
+	
+Then, introduce them into the sequence description block:
+
+	 s1 : sm, at = ??; 
+	 
 2. Using the strength of the sextupoles, $K2_{1}$ and $K2_{2}$ and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
 
     $\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$.
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 
-
 3. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) and both with $\Delta p/p = 0.01$ for 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. Did you manage to recover the original tune for the off-momentum particle? Do you see the tunes? What is going on?
 
-4. Move the tunes to (0.23, 0.23) and repeat the tracking exercice. Are the particles stable?
+4. Move the tunes to (0.23, 0.23) and repeat the tracking exercise. Are the particles stable?
 
 ## Tutorial 6: Building a transfer line
 
@@ -177,8 +189,22 @@ Figure 6: Transfer line scheme.
 
 2. Compute the linear optics functions for the transfer line assuming ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) at the start of it. What are the values of the linear optics functions at the end of the transfer line ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$)?
 
+In order to define the linear optics functions at the beginning of the beamline:
+
+	twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??;
+
 3. Starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) match the line to get at the end of the transfer line the following optics ($\beta_{x, end2}$ , $\alpha_{x, end2}$ , $\beta_{y, end2}$ , $\alpha_{y, end2}$) = (2 m, 0, 1 m, 0).
 
+In order to perform a local matching, use the commands below:
+
+		match, sequence = ??;
+		constraint, range = #e, betx = ??;
+		constraint, range = #e, alfx = ??;
+		vary, name = ??, step = 0.00001;
+		vary, name = ??, step = 0.00001;
+		lmdif, call = 50, tolerances = 1e-6;
+		endmatch;
+		
 4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength from question 1?
 
 5. Consider that the quadrupoles have an excitation current of a 100 A · $m^{2}$ and an excitation magnetic factor of 2 T/m/A and an aperture of 40 mm diameter. Compute the magnetic field at the poles of the four quadrupoles for the two matching solutions obtained in question 2 and 4 assuming a linear regime and using a dimensional approach.

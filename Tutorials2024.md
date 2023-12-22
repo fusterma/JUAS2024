@@ -28,10 +28,10 @@ Questions:
     
 1.    Define a FODO lattice with:
 
-      - the length of the cell, $L_{cell}$ = 100 m,
-      - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),
+      - the length of the cell, L_{cell} = 100 m,
+      - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long (L_{q}),
       - the start of the sequence placed at the start of the first quadrupole,
-      - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f. 
+      - the quadrupole focal length f = 200 m. HINT: K1 x L_{q}= 1/f. 
 
 <p align="center">
 <img src="Figures/Tutorial1_FODO.png" width="50%"/>

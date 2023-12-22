@@ -59,3 +59,152 @@ Questions:
     $\sigma_{x,y}=\sqrt{\frac{\beta_{x,y}\epsilon_n^{x,y}}{\gamma}}$
     
     where $\gamma$ stands for the relativistic factor.
+
+   ## Tutorial 3: Building a circular machine
+
+The main goal of this tutorial is to install dipole magnets in the FODO cell designed in Tutorial 1 to build a circular machine as well as to study the impact of the dipoles into the linear optics functions. In addition, the MAD-X matching module will be used to define the required quadrupole's strength for getting a desired tune of the machine. The tune is a crucial parameter in the design of a circular machine for getting the desired beam quality and stability. 
+
+Questions:
+
+1.    Consider the FODO cell designed in Tutorial 1 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle consider a ring with 736 dipoles with equal bending angles.
+
+<p align="center">
+<img src="Figures/Tutorial3_FODO.png" width="60%"/>
+</p>
+
+<p align="center">
+Figure 4: Scheme of a FODO cell with dipoles.
+</p>
+
+In order to install the dipoles in the lattice, first define the new element with the appropriate MAD-X command:
+
+	 mb : sbend, angle = ??, l = ??; 
+	
+Then, introduce them into the sequence description block:
+
+	 mb1 : mb, at = ??; 
+
+2. Using the twiss command compute the linear optics functions. Do the dipoles (weak focusing) affect the maximum of the $\beta$-functions? And the dispersion? 
+
+3. From the phase advance of the FODO cell compute the horizontal and vertical tunes of the machine.
+
+4. Using the MAD-X match block on a single FODO cell, match the tunes of the machine to 46.0 in both planes.
+
+		match, sequence = ??;
+		global, q1 = ??;
+		global, q2 = ??;
+		vary, name = ??, step = 0.00001;
+		vary, name = ??, step = 0.00001;
+		lmdif, call = 50, tolerances = 1e-6;
+		endmatch;
+
+5. If we change the beam energy to a total beam energy of 7 TeV, which are the new tunes of the machine? Why?
+
+6. What is the maximum tune that you can reach with such a lattice? HINT: what is the maximum phase advance per FODO cell in the thin lens approximation?
+
+## Tutorial 4: Natural chromaticity
+
+The main goal of this tutorial is to study the impact of natural chromaticity of a FODO cell on the particles's beam dynamics by means of particle tracking studies. Fig. 5 illustrated the chromaticity concept in a quadrupole magnet. Orange and blue lines correspond to off-momentum particles and the green line represents the on-momentum particle. In this illustration, we observe a spread in the focusing effect of the quadrupole, which is caused by the energy spread of the beam, known as chromaticity.
+
+<p align="center">
+<img src="Figures/Tutorial4_chroma.jpg" width="50%"/>
+</p>
+<p align="center">
+Figure 5: Chromaticity effect illustration.
+</p>
+
+In order to do this tutorial, we will use as starting point, the thin lens version of the lattice designed in Tutorial 3 and we will consider a 7 TeV total energy proton beam. Here, the use of a thin lens lattice is mandatory in order to use the track MAD-X module. The makethin command should be used for this purpose. Additionally, after running the makethin command, it will be necessary to perform a rematch of the lattice to ensure that the horizontal and vertical tunes of the FODO cell remain at 0.25.
+
+Questions:
+
+1. Using the chromaticity computed using the twiss command, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
+
+     $\Delta Q = dq \times \frac{\Delta p}{p}$
+
+2. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) in 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. How do the particles move in the phase space turn after turn? Do you see the tunes? Do you see any difference between the two particles? It may help to look only at the first 4 turns to get a clear picture.
+
+		track, dump, file = name, deltap = ??;
+		start, x = ??, px = ?? , y = ??, py = ??;
+		start, x = ??, px = ?? , y = ??, py = ??;
+		run, turns = 100;
+		
+3. Repeat the tracking exercise but now for two of-momentum particles by adding a $\Delta p/p = 10^{-2}$ to the initial particles' conditions. How does the phase space look now? Is the tune still the same?
+
+## Tutorial 5: Chromaticity correction and non-linearities
+  
+The main objective of this tutorial is to install sextupoles in the FODO cell used in Tutorial 3 to correct the natural chromaticity and study the impact of the sextupoles on the particles's beam dynamics.
+
+<p align="center">
+<img src="Figures/Tutorial5_chroma_correction.jpg" width="50%"/>
+</p>
+<p align="center">
+Figure 6: Chromaticity correction scheme.
+</p>
+
+Questions:
+
+1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. With a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles ($K2_{1}$ and $K2_{2}$). 
+
+<p align="center">
+<img src="Figures/Tutorial5_FODO.png" width="50%"/>
+</p>
+
+<p align="center">
+Figure 7: FODO cell with dipoles and sextupoles scheme.
+</p>
+
+In order to install the sextupoles in the lattice, first define the new element with the appropriate MAD-X command:
+
+	 sm : sextupole, k2 = ??, l = ??; 
+	
+Then, introduce them into the sequence description block:
+
+	 s1 : sm, at = ??; 
+	 
+2. Using the strength of the sextupoles, $K2_{1}$ and $K2_{2}$ and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
+
+    $\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$.
+    
+Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
+
+3. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) and both with $\Delta p/p = 0.01$ for 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. Did you manage to recover the original tune for the off-momentum particle? Do you see the tunes? What is going on?
+
+4. Move the tunes to (0.23, 0.23) and repeat the tracking exercise. Are the particles stable?
+
+## Tutorial 6: Building a transfer line
+
+ The main objective of this tutorial is to design a transfer line and setting the linear optics functions at the end of the line to some desired values. Matching studies for different initial conditions will be performed and the results discussed.
+
+Questions:
+
+1. Build a transfer line for a 2 GeV proton beam of 10 m total length, $L_{tot}$, with 4 quadrupoles of 0.1 m long, $L_q$, and 0.1 $m^{-2}$. Place the quadrupoles centered at 2, 4, 6, and 8 m. What is the error message that you get if you try to find a periodic solution? Why? 
+
+<p align="center">
+<img src="Figures/Tutorial6_TransferLine.png" width="50%"/>
+</p>
+
+<p align="center">
+Figure 6: Transfer line scheme.
+</p>
+
+2. Compute the linear optics functions for the transfer line assuming ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) at the start of it. What are the values of the linear optics functions at the end of the transfer line ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$)?
+
+In order to define the linear optics functions at the beginning of the beamline:
+
+	twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??;
+
+3. Starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) match the line to get at the end of the transfer line the following optics ($\beta_{x, end2}$ , $\alpha_{x, end2}$ , $\beta_{y, end2}$ , $\alpha_{y, end2}$) = (2 m, 0, 1 m, 0).
+
+In order to perform a local matching, use the commands below:
+
+		match, sequence = ??;
+		constraint, range = #e, betx = ??;
+		constraint, range = #e, alfx = ??;
+		vary, name = ??, step = 0.00001;
+		vary, name = ??, step = 0.00001;
+		lmdif, call = 50, tolerances = 1e-6;
+		endmatch;
+		
+4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength from question 1?
+
+5. Consider that the quadrupoles have an excitation current of a 100 A · $m^{2}$ and an excitation magnetic factor of 2 T/m/A and an aperture of 40 mm diameter. Compute the magnetic field at the poles of the four quadrupoles for the two matching solutions obtained in question 2 and 4 assuming a linear regime and using a dimensional approach.

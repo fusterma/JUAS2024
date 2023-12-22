@@ -9,4 +9,4 @@ Questions:
     
 1.    Define a FODO lattice with:
 
-      - the length of the cell, $L_{cell}$ = 100 m,
+      - the length of the cell, L_{cell} = 100 m,

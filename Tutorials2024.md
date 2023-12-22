@@ -9,3 +9,4 @@ Questions:
     
 1.    Define a FODO lattice with:
 *E = mc<sup>2</sup>*
+*\sum \alpha \beta = 12< > 12^{1}*

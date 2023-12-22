@@ -8,5 +8,6 @@ The main goal of this tutorial is to learn how to define a simple magnetic latti
 Questions:
     
 1.    Define a FODO lattice with:
-*E = mc<sup>2</sup>*
-*\sum \alpha \beta = 12< > 12^{1}*
+<p>the length of the cell, <span
+class="math inline"><em>L</em><sub><em>c</em><em>e</em><em>l</em><em>l</em></sub></span>
+= 100 m,</p>

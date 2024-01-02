@@ -38,7 +38,7 @@ By considering the periodic solution of the equation of motion for a FODO cell, 
 <img src="Figures/equations.png" width="70%"/>
 </p>
 <p align="center">
-Figure 2: FODO cell equations relating linear optics parameters and magnet and cell characteristics.
+Figure 2: FODO cell equations relating linear optics functions and magnet and cell characteristics.
 </p>  
 <p align="center">
 <img src="Figures/analytic.png" width="80%"/>

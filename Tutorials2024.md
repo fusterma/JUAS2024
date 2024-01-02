@@ -7,7 +7,7 @@ The main goal of this tutorial is to learn how to define a simple magnetic latti
 
 Questions:
     
-1.    Define a FODO lattice with:
+1. Define a FODO lattice with:
 
       - the length of the cell, $L_{cell}$ = 100 m,
       - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),

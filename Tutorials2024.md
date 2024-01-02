@@ -44,7 +44,7 @@ Figure 2: FODO cell equations relating linear optics functions and magnet and ce
 <img src="Figures/analytic.png" width="80%"/>
 </p>
 <p align="center">
-Figure 3: Phase advance (left) and maximum and minimum $\beta$-functions as a function of the FODO magnets and cell characteristics.
+Figure 3: Phase advance (left) and maximum and minimum $\beta$-functions as a function of the FODO magnets and cell parameters.
 </p>  
 
 Questions:

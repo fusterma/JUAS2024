@@ -12,16 +12,17 @@ Questions:
       - the length of the cell, $L_{cell}$ = 100 m,
       - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),
       - the start of the sequence placed at the start of the first quadrupole,
-      - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f.
+      - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f,
+      - equal length drift spaces.
   
-<p align="center">
-<img src="Figures/Tutorial1_FODO.png" width="50%"/>
-</p>
-<p align="center">
-Figure 1: FODO cell scheme with main parameters depicted.
-</p>   
+	<p align="center">
+	<img src="Figures/Tutorial1_FODO.png" width="50%"/>
+	</p>
+	<p align="center">
+	Figure 1: FODO cell scheme with main parameters depicted.
+	</p>   
 
-Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function of 460 m you succeeded!
+	Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function around 460 m you succeeded!
 
 2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
     
@@ -48,7 +49,7 @@ Figure 3: Phase advance (left) and maximum and minimum $\beta$-functions as a fu
 
 Questions:
 
-1. Using the thin lens approximation solution form Fig. 3 (left) compute the required strength to power the quadrupoles to obtain a phase advance in the FODO cell of 90 degrees. Using the calculated K value, compute the linear optics functions using MAD-X. What is the phase advance computed by MAD-X?
+1. Using the thin lens approximation solution from Fig. 3 (left) compute the required strength to power the quadrupoles to obtain a phase advance in the FODO cell of 90 degrees. Using the calculated K value, compute the linear optics functions using MAD-X. What is the phase advance computed by MAD-X?
 
 2. And the $\beta_{max}$ value computed by MAD-X? Compare the obtained value with the thin lens approximation solution from Fig. 3 (right).
 

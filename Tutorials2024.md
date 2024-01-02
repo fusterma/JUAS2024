@@ -1,19 +1,19 @@
 # MAD-X WORKSHOP JUAS 2024
-**N. Fuster-Marti­nez, G. Sterbini, D. Gamba, S. Kostoglou, J. Olivares** 
+**N. Fuster-MartiÂ­nez, G. Sterbini, D. Gamba, S. Kostoglou, J. Olivares** 
 
 ## Tutorial 1: My first accelerator, a FODO cell
 
-The main goal of this tutorial is to learn how to define a simple magnetic lattice and compute the linear optics functions using MAD-X. For that, we are going to define a FODO lattice, which is the simplest configuration we can design to get a net focusing effect of the beam in both transverse planes.
+The main goal of this tutorial is to ensure that we all have a working enviroment and to get familiar with the MAD-X pythonic approach. In order to do that, we are going to define a simple magnetic lattice, a FODO lattice, which is the simplest configuration we can design to get a net focusing effect of the beam in both transverse planes, and compute the linear optics functions.
 
 Questions:
     
-1.    Define a FODO lattice with:
+1. Define a FODO lattice with:
 
       - the length of the cell, $L_{cell}$ = 100 m,
       - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),
       - the start of the sequence placed at the start of the first quadrupole,
-      - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f. 
-
+      - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f.
+  
 <p align="center">
 <img src="Figures/Tutorial1_FODO.png" width="50%"/>
 </p>
@@ -21,11 +21,11 @@ Questions:
 Figure 1: FODO cell scheme with main parameters depicted.
 </p>   
 
-2. Define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function of 460 m you succeeded!
+Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function of 460 m you succeeded!
 
-3. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
+2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
     
-4. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages will appear in the terminal from which you launched the JupyterLab.
+3. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages will appear in the terminal from which you launched the JupyterLab.
 
 ## Tutorial 2: My first matching
 
@@ -54,13 +54,13 @@ Questions:
 
 3. Reduce by half the focusing strength of the quadrupoles, what is the effect of it on the $\beta_{max}$, $\beta_{min}$ and $\Delta \mu$? Compare the obtained values with the thin lens approximation from Fig. 3.
 
-4. Compute the maximum beam size, $\sigma_{x,y}$ ,ƒ assuming a normalized horizontal and vertical emittance, $\epsilon_n^{x,y}$, of 3 mrad mm and $E_{tot}$ = 7 TeV using the following relation:
+4. Compute the maximum beam size, $\sigma_{x,y}$ ,Âƒ assuming a normalized horizontal and vertical emittance, $\epsilon_n^{x,y}$, of 3 mrad mm and $E_{tot}$ = 7 TeV using the following relation:
 
     $\sigma_{x,y}=\sqrt{\frac{\beta_{x,y}\epsilon_n^{x,y}}{\gamma}}$
     
     where $\gamma$ stands for the relativistic factor.
 
-## Tutorial 3: Building a circular machine
+   ## Tutorial 3: Building a circular machine
 
 The main goal of this tutorial is to install dipole magnets in the FODO cell designed in Tutorial 1 to build a circular machine as well as to study the impact of the dipoles into the linear optics functions. In addition, the MAD-X matching module will be used to define the required quadrupole's strength for getting a desired tune of the machine. The tune is a crucial parameter in the design of a circular machine for getting the desired beam quality and stability. 
 
@@ -143,7 +143,7 @@ Figure 6: Chromaticity correction scheme.
 
 Questions:
 
-1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. With a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles ($K2_{1}$ and $K2_{2}$). 
+1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. With a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
 
 <p align="center">
 <img src="Figures/Tutorial5_FODO.png" width="50%"/>
@@ -161,7 +161,7 @@ Then, introduce them into the sequence description block:
 
 	 s1 : sm, at = ??; 
 	 
-2. Using the strength of the sextupoles, $K2_{1}$ and $K2_{2}$ and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
+2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
 
     $\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$.
     
@@ -207,4 +207,4 @@ In order to perform a local matching, use the commands below:
 		
 4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength from question 1?
 
-5. Consider that the quadrupoles have an excitation current of a 100 A · $m^{2}$ and an excitation magnetic factor of 2 T/m/A and an aperture of 40 mm diameter. Compute the magnetic field at the poles of the four quadrupoles for the two matching solutions obtained in question 2 and 4 assuming a linear regime and using a dimensional approach.
+5. Consider that the quadrupoles have an excitation current of a 100 A Â· $m^{2}$ and an excitation magnetic factor of 2 T/m/A and an aperture of 40 mm diameter. Compute the magnetic field at the poles of the four quadrupoles for the two matching solutions obtained in question 2 and 4 assuming a linear regime and using a dimensional approach.

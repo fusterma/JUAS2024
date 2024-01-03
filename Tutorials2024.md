@@ -15,12 +15,12 @@ Questions:
       - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f,
       - equal length drift spaces.
   
-	<p align="center">
-	<img src="Figures/Tutorial1_FODO.png" width="50%"/>
-	</p>
-	<p align="center">
-	Figure 1: FODO cell scheme with main parameters depicted.
-	</p>   
+<p align="center">
+<img src="Figures/Tutorial1_FODO.png" width="50%"/>
+</p>
+<p align="center">
+Figure 1: FODO cell scheme with main parameters depicted.
+</p>   
 
 	Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function around 460 m you succeeded!
 
@@ -69,13 +69,13 @@ Questions:
 
 1. Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
 
-	<p align="center">
-	<img src="Figures/Tutorial3_FODO.png" width="60%"/>
-	</p>
+<p align="center">
+<img src="Figures/Tutorial3_FODO.png" width="60%"/>
+</p>
 
-	<p align="center">
-	Figure 4: Scheme of a FODO cell with dipoles.
-	</p>
+<p align="center">
+Figure 4: Scheme of a FODO cell with dipoles.
+</p>
 
 	In order to install the dipoles in the lattice, first define the new element with the appropriate MAD-X command:
 
@@ -164,13 +164,13 @@ Questions:
 
 	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
 	 
-3. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
+2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
 
 $\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 
-3. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) and both with $\Delta p/p = 0.01$ for 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. Did you manage to recover the original tune for the off-momentum particle? Do you see the tunes? What is going on?
+3. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) and both with $\Delta p/p = 0.01$ for 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. Did you manage to recover the original tune for the off-momentum particle from Tutorial 4? Do you see the tunes? What is going on?
 
 4. Move the tunes to (0.23, 0.23) and repeat the tracking exercise. Are the particles stable?
 

@@ -7,7 +7,7 @@ The main goal of this tutorial is to ensure that we all have a working enviromen
 
 Questions:
     
-1. Define a FODO lattice with:
+1. Define a FODO cell with:
 
       - the length of the cell, $L_{cell}$ = 100 m,
       - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),
@@ -26,19 +26,19 @@ Questions:
 
 2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
     
-3. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages will appear in the terminal from which you launched the JupyterLab.
+3. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages could appear in the jupyter notebook or in the terminal from which you launched the JupyterLab.
 
 ## Tutorial 2: My first matching
 
 The main goal of this tutorial is to study the behavior of the linear optics functions when we vary the FODO cell magnetic properties. For that, we will use the linear thin lens optics solution and the twiss MAD-X module. The results of the two approaches will be compared and discussed.
 
-By considering the periodic solution of the equation of motion for a FODO cell, and applying the thin lens approximation and the stability condition, we can derive the following relationships between the optical parameters, the magnet properties and the cell length:
+By considering the periodic solution of the equation of motion of a charged particle in a FODO cell, and applying the thin lens approximation and the stability condition, we can derive the following relationships between the optical parameters, the magnet properties and the cell length:
 
 <p align="center">
 <img src="Figures/equations.png" width="70%"/>
 </p>
 <p align="center">
-Figure 2: FODO cell equations relating linear optics functions and magnet and cell characteristics.
+Figure 2: FODO cell equations relating linear optics functions and magnet and FODO cell parameters.
 </p>  
 <p align="center">
 <img src="Figures/analytic.png" width="80%"/>
@@ -61,13 +61,13 @@ Questions:
     
     where $\gamma$ stands for the relativistic factor.
 
-   ## Tutorial 3: Building a circular machine
+## Tutorial 3: Building a circular machine
 
 The main goal of this tutorial is to install dipole magnets in the FODO cell designed in Tutorial 1 to build a circular machine as well as to study the impact of the dipoles into the linear optics functions. In addition, the MAD-X matching module will be used to define the required quadrupole's strength for getting a desired tune of the machine. The tune is a crucial parameter in the design of a circular machine for getting the desired beam quality and stability. 
 
 Questions:
 
-1.    Consider the FODO cell designed in Tutorial 1 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle consider a ring with 736 dipoles with equal bending angles.
+1.    Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
 
 <p align="center">
 <img src="Figures/Tutorial3_FODO.png" width="60%"/>
@@ -81,7 +81,7 @@ In order to install the dipoles in the lattice, first define the new element wit
 
 	 mb : sbend, angle = ??, l = ??; 
 	
-Then, introduce them into the sequence description block:
+Then, introduce them into the sequence description block and define their location:
 
 	 mb1 : mb, at = ??; 
 
@@ -96,7 +96,7 @@ Then, introduce them into the sequence description block:
 		global, q2 = ??;
 		vary, name = ??, step = 0.00001;
 		vary, name = ??, step = 0.00001;
-		lmdif, call = 50, tolerances = 1e-6;
+		lmdif, call = 50, tolerance = 1e-6;
 		endmatch;
 
 5. If we change the beam energy to a total beam energy of 7 TeV, which are the new tunes of the machine? Why?

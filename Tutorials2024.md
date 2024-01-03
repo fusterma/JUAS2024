@@ -3,7 +3,7 @@
 
 ## Tutorial 1: My first accelerator, a FODO cell
 
-The main goal of this tutorial is to ensure that we all have a working enviroment and to get familiar with the MAD-X pythonic approach. In order to do that, we are going to define a simple magnetic lattice, a FODO lattice, which is the simplest configuration we can design to get a net focusing effect of the beam in both transverse planes, and compute the linear optics functions.
+The main goal of this tutorial is to ensure that we all have a working enviroment and to get familiar with the MAD-X pythonic approach. In order to do that, we are going to define a simple magnetic lattice, a FODO cell, which is the simplest configuration we can design to get a net focusing effect of the beam in both transverse planes, and compute the linear optics functions.
 
 Questions:
     

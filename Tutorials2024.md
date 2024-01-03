@@ -133,7 +133,7 @@ Questions:
 
 ## Tutorial 5: Chromaticity correction and non-linearities
   
-The goal of this tutorial is to design a chromaticity correction scheme fo rthe FODO cell of Tutorial 4 by installing sextupoles. Then, the impact of the sextupoles on the particles' beam dynamics will be evaluated by means of tracking studies.
+The goal of this tutorial is to design a chromaticity correction scheme for the FODO cell of Tutorial 4 by installing sextupoles. Then, the impact of the sextupoles on the particles' beam dynamics will be evaluated by means of tracking studies.
 
 <p align="center">
 <img src="Figures/Tutorial5_chroma_correction.jpg" width="50%"/>
@@ -144,7 +144,7 @@ Figure 6: Chromaticity correction scheme.
 
 Questions:
 
-1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. With a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
+1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. 
 
 	<p align="center">
 	<img src="Figures/Tutorial5_FODO.png" width="50%"/>
@@ -160,11 +160,13 @@ Questions:
 	
 	Then, introduce them into the sequence description block:
 
-	 	s1 : sm, at = ??; 
-	 
-2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
+	 	s1 : sm, at = ??;
 
-    $\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$.
+	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
+	 
+3. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
+
+$\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 

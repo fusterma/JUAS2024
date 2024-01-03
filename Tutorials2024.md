@@ -67,23 +67,23 @@ The main goal of this tutorial is to install dipole magnets in the FODO cell des
 
 Questions:
 
-1.    Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
+1. Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
 
-<p align="center">
-<img src="Figures/Tutorial3_FODO.png" width="60%"/>
-</p>
+	<p align="center">
+	<img src="Figures/Tutorial3_FODO.png" width="60%"/>
+	</p>
 
-<p align="center">
-Figure 4: Scheme of a FODO cell with dipoles.
-</p>
+	<p align="center">
+	Figure 4: Scheme of a FODO cell with dipoles.
+	</p>
 
-In order to install the dipoles in the lattice, first define the new element with the appropriate MAD-X command:
+	In order to install the dipoles in the lattice, first define the new element with the appropriate MAD-X command:
 
-	 mb : sbend, angle = ??, l = ??; 
+	 	mb : sbend, angle = ??, l = ??; 
 	
-Then, introduce them into the sequence description block and define their location:
+	Then, introduce them into the sequence description block and define their location:
 
-	 mb1 : mb, at = ??; 
+	 	mb1 : mb, at = ??; 
 
 2. Using the twiss command compute the linear optics functions. Do the dipoles (weak focusing) affect the maximum of the $\beta$-functions? And the dispersion? 
 
@@ -133,7 +133,7 @@ Questions:
 
 ## Tutorial 5: Chromaticity correction and non-linearities
   
-The main objective of this tutorial is to install sextupoles in the FODO cell used in Tutorial 3 to correct the natural chromaticity and study the impact of the sextupoles on the particles's beam dynamics.
+The goal of this tutorial is to design a chromaticity correction scheme fo rthe FODO cell of Tutorial 4 by installing sextupoles. Then, the impact of the sextupoles on the particles' beam dynamics will be evaluated by means of tracking studies.
 
 <p align="center">
 <img src="Figures/Tutorial5_chroma_correction.jpg" width="50%"/>
@@ -146,21 +146,21 @@ Questions:
 
 1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. With a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
 
-<p align="center">
-<img src="Figures/Tutorial5_FODO.png" width="50%"/>
-</p>
+	<p align="center">
+	<img src="Figures/Tutorial5_FODO.png" width="50%"/>
+	</p>
 
-<p align="center">
-Figure 7: FODO cell with dipoles and sextupoles scheme.
-</p>
+	<p align="center">
+	Figure 7: FODO cell with dipoles and sextupoles scheme.
+	</p>
 
-In order to install the sextupoles in the lattice, first define the new element with the appropriate MAD-X command:
+	In order to install the sextupoles in the lattice, first define the new element with the appropriate MAD-X command:
 
-	 sm : sextupole, k2 = ??, l = ??; 
+	 	sm : sextupole, k2 = ??, l = ??; 
 	
-Then, introduce them into the sequence description block:
+	Then, introduce them into the sequence description block:
 
-	 s1 : sm, at = ??; 
+	 	s1 : sm, at = ??; 
 	 
 2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
 

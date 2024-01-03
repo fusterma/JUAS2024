@@ -105,7 +105,7 @@ Then, introduce them into the sequence description block and define their locati
 
 ## Tutorial 4: Natural chromaticity
 
-The main goal of this tutorial is to study the impact of natural chromaticity of a FODO cell on the particles's beam dynamics by means of particle tracking studies. Fig. 5 illustrated the chromaticity concept in a quadrupole magnet. Orange and blue lines correspond to off-momentum particles and the green line represents the on-momentum particle. In this illustration, we observe a spread in the focusing effect of the quadrupole, which is caused by the energy spread of the beam, known as chromaticity.
+The main goal of this tutorial is to study the impact of natural chromaticity of a FODO cell on the particles' beam dynamics by means of particle tracking studies. Fig. 5 illustrates the chromaticity concept in a quadrupole magnet. Orange and blue lines correspond to off-momentum particles and the green line represents the on-momentum particle. In this illustration, we observe an spread in the focusing effect of the quadrupole, which is caused by the energy spread of the beam, known as chromaticity.
 
 <p align="center">
 <img src="Figures/Tutorial4_chroma.jpg" width="50%"/>
@@ -114,11 +114,11 @@ The main goal of this tutorial is to study the impact of natural chromaticity of
 Figure 5: Chromaticity effect illustration.
 </p>
 
-In order to do this tutorial, we will use as starting point, the thin lens version of the lattice designed in Tutorial 3 and we will consider a 7 TeV total energy proton beam. Here, the use of a thin lens lattice is mandatory in order to use the track MAD-X module. The makethin command should be used for this purpose. Additionally, after running the makethin command, it will be necessary to perform a rematch of the lattice to ensure that the horizontal and vertical tunes of the FODO cell remain at 0.25.
+In order to do this tutorial, we will use as starting point, the thin lens version of the lattice designed in Tutorial 3 and we will consider a 7 TeV total energy proton beam. Here, the use of a thin lens lattice is mandatory in order to use the track MAD-X module. The makethin command should be used for this purpose. Additionally, after running the makethin command, it will be necessary to perform a rematch of the lattice to ensure that the horizontal and vertical tunes of the FODO cell remain at 0.25. All this steps are implemented for you on the Tutorial4.madx file.
 
 Questions:
 
-1. Using the chromaticity computed using the twiss command, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
+1. Run the Tutorial4.madx file to compute the twiss of the new thin lens lattice. Using the chromaticities obtained, compute the tunes for $\Delta p / p = 10^{-3}$.Using the chromaticity computed using the twiss command, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
 
      $\Delta Q = dq \times \frac{\Delta p}{p}$
 

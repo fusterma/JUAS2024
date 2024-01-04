@@ -5,26 +5,48 @@
 
 Lattice elements definition:
         
-    mb : sbend, angle = ??, l = ??; 
-    mq : quadrupole, k1 = ??, l = ??;
-    ms : sextupole, k2 = ??, l = ??;
+        mb : sbend, angle = ??, l = ??; 
+        mq : quadrupole, k1 = ??, l = ??;
+        ms : sextupole, k2 = ??, l = ??;
 
 Sequence definition:
 
-   
+        sequencename : sequence, refer = centre, l = ??;
+        element1: elementType1, at = ??;
+        element1: elementType1, at = ??;
+        ...
+        endsequence;
 
-  match, sequence = ??;
-  
-  global, q1 = ??;
-  
-  global, q2 = ??;
-  
-  vary, name = ??, step = 0.00001;
-  
-  vary, name = ??, step = 0.00001;
-  
-  lmdif, call = 50, tolerance = 1e-6;
-  
-  endmatch;
+Sequence activation:
+
+        use, sequence = sequencename;
+
+Call an external file:
+
+        call, file = name;
+
+Beam definition:
+
+        beam, particle = proton, energy = 7000;
+
+Twiss action:
+
+        twiss, sequence = name, centre, file = filename.txt, table = name;
+
+        twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file = filename.txt, table = name;
+
+        select, flag = twiss, column = name, keyword, s, betx, bety;
+
+        plot, haxis = s, vaxis = betx, color = 100, file = name;
+   
+Matching action:
+
+        match, sequence = ??;
+        global, q1 = ??;
+        global, q2 = ??;
+        vary, name = ??, step = 0.00001;
+        vary, name = ??, step = 0.00001;
+        lmdif, call = 50, tolerance = 1e-6;
+        endmatch;
 
 

@@ -21,7 +21,7 @@ myAngle:=2*pi/nBend;
 !! Sextupole Parameters
 k2f = 0;
 k2d := -k2f;
-sextupoleLength = ??;
+sextupoleLength = 0.5;
 
 ! *********************************************************************
 ! Definition of magnets
@@ -30,8 +30,8 @@ sextupoleLength = ??;
 QF: quadrupole, L=quadrupoleLength, K1:=myKF;
 QD: quadrupole, L=quadrupoleLength, K1:=myKD;
 BM: sbend, L=dipoleLength, angle:=myAngle; 
-SF: sextupole, L=??, k2:=??;
-SD: sextupole, L=??, k2:=??;
+SF: sextupole, L=sextupoleLength, k2:=k2f;
+SD: sextupole, L=sextupoleLength, k2:=k2d;
 
 ! *********************************************************************
 ! Definition of sequence
@@ -39,11 +39,11 @@ SD: sextupole, L=??, k2:=??;
 
 myCell:sequence, refer=centre, L=l_cell;
 q1: QF, at=0+quadrupoleLength/2;
-S1 : SF, at=??;
+S1 : SF, at=quadrupoleLength/2+sextupoleLength/2, from=q1;
 B1: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q1;
 B2: BM, at =5+dipoleLength, from=b1;
 q2: QD, at=l_cell/2+quadrupoleLength/2;
-S2 : SD, at=??;
+S2 : SD, at=quadrupoleLength/2+sextupoleLength/2, from=q2;
 B3: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q2;
 B4: BM, at =5+dipoleLength, from=b3;;
 endsequence;
@@ -106,3 +106,4 @@ value, table(summ, q1)*(nBend/4);
 value, table(summ, q1)*(nBend/4);
 value, table(summ, dq1);
 value, table(summ, dq2);
+

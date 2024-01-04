@@ -7,7 +7,9 @@ The main goal of this tutorial is to ensure that we all have a working enviromen
 
 Questions:
     
-1. Define a FODO cell with:
+1. Define a FODO cell with the parameters below. Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function around 460 m you succeeded!
+
+   FODO cell specifications:
 
       - the length of the cell, $L_{cell}$ = 100 m,
       - two quadrupoles, one focusing (FQ) and another one defocusing (DQ), of 5 m long ($L_{q}$),
@@ -21,8 +23,6 @@ Questions:
 <p align="center">
 Figure 1: FODO cell scheme with main parameters depicted.
 </p>   
-
-	Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function around 460 m you succeeded!
 
 2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
     
@@ -176,11 +176,11 @@ Then, compare the obtained values with the chromaticity value obtained in Tutori
 
 ## Tutorial 6: Building a transfer line
 
- The main objective of this tutorial is to design a transfer line and setting the linear optics functions at the end of the line to some desired values. Matching studies for different initial conditions will be performed and the results discussed.
+The main objective of this tutorial is to design a transfer line and setting the linear optics functions at the end of the line to some desired values. Matching studies for different initial conditions will be performed and the results discussed.
 
 Questions:
 
-1. Build a transfer line for a 2 GeV proton beam of 10 m total length, $L_{tot}$, with 4 quadrupoles of 0.1 m long, $L_q$, and 0.1 $m^{-2}$. Place the quadrupoles centered at 2, 4, 6, and 8 m. What is the error message that you get if you try to find a periodic solution? Why? 
+1. Build a transfer line for a 2 GeV proton beam of 10 m total length, $L_{tot}$, with 4 quadrupoles of 0.1 m long, $L_q$, and a strength of 0.1 $m^{-2}$. Place the quadrupoles centered at 2, 4, 6, and 8 m. What is the error message that you get if you try to find a periodic solution? Why? 
 
 <p align="center">
 <img src="Figures/Tutorial6_TransferLine.png" width="50%"/>
@@ -208,6 +208,6 @@ In order to perform a local matching, use the commands below:
 		lmdif, call = 50, tolerances = 1e-6;
 		endmatch;
 		
-4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength from question 1?
+4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength of 0.1 $m^{-2}$ from question 1?
 
 5. Consider that the quadrupoles have an excitation current of a 100 A · $m^{2}$ and an excitation magnetic factor of 2 T/m/A and an aperture of 40 mm diameter. Compute the magnetic field at the poles of the four quadrupoles for the two matching solutions obtained in question 2 and 4 assuming a linear regime and using a dimensional approach.

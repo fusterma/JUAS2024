@@ -34,6 +34,13 @@ def plot_layout(myDF):
         aux=DF.iloc[i]
         plotLatticeSeries(plt.gca(),aux, height=aux.k1l, v_offset=aux.k1l/2, color='r')
 
+
+    DF=myTwiss[(myTwiss['keyword']=='multipole')]
+    for i in range(len(DF)):
+        aux=DF.iloc[i]
+        plotLatticeSeries(plt.gca(),aux, height=aux.k2l, v_offset=aux.k2l/2, color='y')
+
+    
     color = 'red'
     ax1.set_ylabel('1/f=K1L [m$^{-1}$]', color=color,fontsize=20)
     ax1.tick_params(axis='y',labelsize=20,labelcolor=color)
@@ -46,16 +53,17 @@ def plot_layout(myDF):
     ax2.set_ylabel('$\\theta$[rad]', color=color,fontsize=20)
     ax2.tick_params(axis='y', labelsize=20,labelcolor=color)
 
-    DF=myTwiss[(myTwiss['keyword']=='multipole')]
-    for i in range(len(DF)):
-        aux=DF.iloc[i]
-        plotLatticeSeries(plt.gca(),aux, height=aux.k2l, v_offset=aux.k2l/2, color='y')
-
+    
 
     DF=myTwiss[(myTwiss['keyword']=='sbend')]
     for i in range(len(DF)):
         aux=DF.iloc[i]
         plotLatticeSeries(plt.gca(),aux, height=aux.angle, v_offset=aux.angle/2, color='b')
+
+    DF=myTwiss[(myTwiss['keyword']=='multipole')]
+    for i in range(len(DF)):
+        aux=DF.iloc[i]
+        plotLatticeSeries(plt.gca(),aux, height=aux.k0l, v_offset=aux.k0l/2, color='b')
   
     ax2.set_ylim(-np.max(abs(myDF.angle)),np.max(abs(myDF.angle)))
 

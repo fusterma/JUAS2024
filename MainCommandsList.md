@@ -71,5 +71,18 @@ Matching action:
    	madx.table.twiss.dframe()
         madx.table.summ.dframe()
 	
-     
+## Python plot commands
+
+	#### To change the size of the plot window
+	# plt.rcParams['figure.dpi'] = 100
+
+	#### Plot command
+	# plt.plot(x,y,'ob',label='Example')
+
+	#### Adding labels
+	# plt.xlabel('s[m]')
+	# plt.ylabel('[m]')
+	
+	#### Adding a legend
+	# plt.legend(loc='best')     
 

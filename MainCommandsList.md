@@ -4,12 +4,9 @@
 ## MAD-X commands
 
 Lattice elements definition:
-
-  mb : sbend, angle = ??, l = ??; 
-
-  mq : quadrupole, k1 = ??, l = ??;
-
-  ms : sextupole, k2 = ??, l = ??;
+    mb : sbend, angle = ??, l = ??; 
+    mq : quadrupole, k1 = ??, l = ??;
+    ms : sextupole, k2 = ??, l = ??;
 
 Sequence definition:
 

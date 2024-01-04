@@ -45,8 +45,8 @@ Matching action:
         vary, name = ??, step = 0.00001;
         lmdif, call = 50, tolerance = 1e-6;
         endmatch;
-
-        match, sequence = ??;
+	
+ 	match, sequence = ??;
 	constraint, range = #e, betx = ??;
  	constraint, range = #e, alfx = ??;
   	vary, name = ??, step = 0.00001;
@@ -59,7 +59,7 @@ Matching action:
   	track, dump, file = name, deltap = ??;
    	start, x = ??, px = ?? , y = ??, py = ??;
     	start, x = ??, px = ?? , y = ??, py = ??;
-     	run, turns = 100;
+      	run, turns = 100;
 
         
 ## Cpymad library functions
@@ -70,7 +70,7 @@ Matching action:
   	madx.call('filename')
    	madx.input('MAD-X commands')
    	madx.table.twiss.dframe()
-        madx.table.summ.dframe()
+    	madx.table.twiss.dframe()
 
  
 ## Python plot commands

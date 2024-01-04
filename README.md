@@ -9,4 +9,4 @@ For the workshop we will ask you to download the last version of the [MAD-X Work
 
 The questions for each tutorial can be found [here](./Tutorials2024.md).
 
-A list with the main MAD-X, cpymad and Python commands required to solved the questions of the proposed solutions can be found [here](./MainCommandsList.md).
+A list with the main MAD-X, cpymad and Python commands to be used along the tutorials can be found [here](./MainCommandsList.md).

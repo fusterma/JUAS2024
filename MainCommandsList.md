@@ -3,15 +3,30 @@
 
 ## MAD-X commands
 
+Lattice elements definition:
+
   mb : sbend, angle = ??, l = ??; 
-  mb1 : mb, at = ??; 
+
+  mq : quadrupole, k1 = ??, l = ??;
+
+  ms : sextupole, k2 = ??, l = ??;
+
+Sequence definition:
+
+   
 
   match, sequence = ??;
+  
   global, q1 = ??;
+  
   global, q2 = ??;
+  
   vary, name = ??, step = 0.00001;
+  
   vary, name = ??, step = 0.00001;
+  
   lmdif, call = 50, tolerance = 1e-6;
+  
   endmatch;
 
 

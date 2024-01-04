@@ -55,14 +55,15 @@ Matching action:
      	endmatch;
 
  Tracking action:
- 
- 	track, dump, file = name, deltap = ??;
-  	start, x = ??, px = ?? , y = ??, py = ??;
+ 	
+  	track, dump, file = name, deltap = ??;
    	start, x = ??, px = ?? , y = ??, py = ??;
-    	run, turns = 100;
+    	start, x = ??, px = ?? , y = ??, py = ??;
+     	run, turns = 100;
 
         
 ## Cpymad library functions
+
 
 	from cpymad.madx import Madx
  	madx = Madx()
@@ -70,19 +71,20 @@ Matching action:
    	madx.input('MAD-X commands')
    	madx.table.twiss.dframe()
         madx.table.summ.dframe()
-	
+
+ 
 ## Python plot commands
 
 	#### To change the size of the plot window
-	# plt.rcParams['figure.dpi'] = 100
+	plt.rcParams['figure.dpi'] = 100
 
 	#### Plot command
-	# plt.plot(x,y,'ob',label='Example')
+	plt.plot(x,y,'ob',label='Example')
 
 	#### Adding labels
-	# plt.xlabel('s[m]')
-	# plt.ylabel('[m]')
+	plt.xlabel('s[m]')
+	plt.ylabel('[m]')
 	
 	#### Adding a legend
-	# plt.legend(loc='best')     
+	plt.legend(loc='best')     
 

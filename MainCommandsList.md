@@ -32,11 +32,8 @@ Beam definition:
 Twiss action:
 
         twiss, sequence = name, centre, file = filename.txt, table = name;
-
         twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file = filename.txt, table = name;
-
         select, flag = twiss, column = name, keyword, s, betx, bety;
-
         plot, haxis = s, vaxis = betx, color = 100, file = name;
    
 Matching action:
@@ -48,5 +45,22 @@ Matching action:
         vary, name = ??, step = 0.00001;
         lmdif, call = 50, tolerance = 1e-6;
         endmatch;
+
+        match, sequence = ??;
+	constraint, range = #e, betx = ??;
+	constraint, range = #e, alfx = ??;
+	vary, name = ??, step = 0.00001;
+	vary, name = ??, step = 0.00001;
+	lmdif, call = 50, tolerances = 1e-6;
+	endmatch;
+
+ Tracking action:
+
+ 	track, dump, file = name, deltap = ??;
+	start, x = ??, px = ?? , y = ??, py = ??;
+	start, x = ??, px = ?? , y = ??, py = ??;
+	run, turns = 100;
+
+        
 
 

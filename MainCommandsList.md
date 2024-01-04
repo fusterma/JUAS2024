@@ -48,11 +48,11 @@ Matching action:
 
         match, sequence = ??;
 	constraint, range = #e, betx = ??;
-	constraint, range = #e, alfx = ??;
-	vary, name = ??, step = 0.00001;
-	vary, name = ??, step = 0.00001;
-	lmdif, call = 50, tolerances = 1e-6;
-	endmatch;
+ 	constraint, range = #e, alfx = ??;
+  	vary, name = ??, step = 0.00001;
+   	vary, name = ??, step = 0.00001;
+    	lmdif, call = 50, tolerances = 1e-6;
+     	endmatch;
 
  Tracking action:
 

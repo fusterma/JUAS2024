@@ -51,16 +51,25 @@ Matching action:
  	constraint, range = #e, alfx = ??;
   	vary, name = ??, step = 0.00001;
    	vary, name = ??, step = 0.00001;
-    	lmdif, call = 50, tolerances = 1e-6;
+    	lmdif, call = 50, tolerance = 1e-6;
      	endmatch;
 
  Tracking action:
-
+ 
  	track, dump, file = name, deltap = ??;
-	start, x = ??, px = ?? , y = ??, py = ??;
-	start, x = ??, px = ?? , y = ??, py = ??;
-	run, turns = 100;
+  	start, x = ??, px = ?? , y = ??, py = ??;
+   	start, x = ??, px = ?? , y = ??, py = ??;
+    	run, turns = 100;
 
         
+## Cpymad library functions
 
+	from cpymad.madx import Madx
+ 	madx = Madx()
+  	madx.call('filename')
+   	madx.input('MAD-X commands')
+   	madx.table.twiss.dframe()
+        madx.table.summ.dframe()
+	
+     
 

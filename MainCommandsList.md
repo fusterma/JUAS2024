@@ -1,9 +1,6 @@
 # Main commands list
-<<<<<<< HEAD
+
 **N. Fuster-MartiÂ­nez, G. Sterbini, D. Gamba, S. Kostoglou, J. Olivares** 
-=======
-**N. Fuster-Marti­nez, G. Sterbini, D. Gamba, S. Kostoglou, J. Olivares** 
->>>>>>> 6bcd3e9 (Introduction)
 
 ## MAD-X commands
 
@@ -90,9 +87,4 @@ Matching action:
 	plt.ylabel('[m]')
 	
 	#### Adding a legend
-<<<<<<< HEAD
 	plt.legend(loc='best')     
-
-=======
-	plt.legend(loc='best')    
->>>>>>> 6bcd3e9 (Introduction)

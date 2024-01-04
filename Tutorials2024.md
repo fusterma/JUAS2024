@@ -205,7 +205,7 @@ In order to perform a local matching, use the commands below:
 		constraint, range = #e, alfx = ??;
 		vary, name = ??, step = 0.00001;
 		vary, name = ??, step = 0.00001;
-		lmdif, call = 50, tolerances = 1e-6;
+		lmdif, call = 50, tolerance = 1e-6;
 		endmatch;
 		
 4. Now, starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) and the quadrupoles' strength computed in question 3, match to the ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$) found in the question number 2. Can you find back the initial quadrupoles' strength of 0.1 $m^{-2}$ from question 1?

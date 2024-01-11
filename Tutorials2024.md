@@ -5,6 +5,13 @@
 
 The main goal of this tutorial is to ensure that we all have a working enviroment and to get familiar with the MAD-X pythonic approach. In order to do that, we are going to define a simple magnetic lattice, a FODO cell, which is the simplest configuration we can design to get a net focusing effect of the beam in both transverse planes, and compute the linear optics functions.
 
+<p align="center">
+<img src="Figures/Tutorial1_FODO.png" width="50%"/>
+</p>
+<p align="center">
+Figure 1: FODO cell scheme with main parameters depicted.
+</p>
+
 Questions:
     
 1. Define a FODO cell with the parameters below. Then, define a proton beam with a total energy, $E_{tot}$, of 2 GeV. Activate the sequence and compute the periodic linear optics functions with the twiss MAD-X command. Then, plot the $\beta$-functions. If you found a maximum $\beta$-function around 460 m you succeeded!
@@ -16,17 +23,12 @@ Questions:
       - the start of the sequence placed at the start of the first quadrupole,
       - the quadrupole focal length f = 200 m. HINT: K1 x $L_{q}$= 1/f,
       - equal length drift spaces.
-  
-<p align="center">
-<img src="Figures/Tutorial1_FODO.png" width="50%"/>
-</p>
-<p align="center">
-Figure 1: FODO cell scheme with main parameters depicted.
-</p>   
+     
 
 2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
+   $\phi (s)=\int_0^s \frac{1}{\beta (s)} ds$
     
-3. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages could appear in the jupyter notebook or in the terminal from which you launched the JupyterLab.
+4. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages could appear in the jupyter notebook or in the terminal from which you launched the JupyterLab.
 
 ## Tutorial 2: My first matching
 

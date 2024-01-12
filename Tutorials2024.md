@@ -145,17 +145,17 @@ The goal of this tutorial is to design a chromaticity correction scheme for the 
 Figure 6: Chromaticity correction scheme.
 </p>
 
+<p align="center">
+<img src="Figures/Tutorial5_FODO.png" width="50%"/>
+</p>
+
+<p align="center">
+Figure 7: FODO cell with dipoles and sextupoles scheme.
+</p>
+
 Questions:
 
 1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. 
-
-	<p align="center">
-	<img src="Figures/Tutorial5_FODO.png" width="50%"/>
-	</p>
-
-	<p align="center">
-	Figure 7: FODO cell with dipoles and sextupoles scheme.
-	</p>
 
 	In order to install the sextupoles in the lattice, first define the new element with the appropriate MAD-X command:
 
@@ -165,11 +165,11 @@ Questions:
 
 	 	s1 : sm, at = ??;
 
-	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by powering the two sextupoles. 
+	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by 	powering the two sextupoles. 
 	 
 2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
 
-$\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$
+	$\xi=\frac{1}{4\pi}(\beta_{x,s1}k2_1d_{x,s1}+\beta_{x,s2}k2_2d_{x,s2})$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 

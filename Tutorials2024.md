@@ -181,10 +181,6 @@ Then, compare the obtained values with the chromaticity value obtained in Tutori
 
 The main objective of this tutorial is to design a transfer line and setting the linear optics functions at the end of the line to some desired values. Matching studies for different initial conditions will be performed and the results discussed.
 
-Questions:
-
-1. Build a transfer line for a 2 GeV proton beam of 10 m total length, $L_{tot}$, with 4 quadrupoles of 0.1 m long, $L_q$, and a strength of 0.1 $m^{-2}$. Place the quadrupoles centered at 2, 4, 6, and 8 m. What is the error message that you get if you try to find a periodic solution? Why? 
-
 <p align="center">
 <img src="Figures/Tutorial6_TransferLine.png" width="50%"/>
 </p>
@@ -193,15 +189,19 @@ Questions:
 Figure 6: Transfer line scheme.
 </p>
 
+Questions:
+
+1. Build a transfer line for a 2 GeV proton beam of 10 m total length, $L_{tot}$, with 4 quadrupoles of 0.1 m long, $L_q$, and a strength of 0.1 $m^{-2}$. Place the quadrupoles centered at 2, 4, 6, and 8 m. What is the error message that you get if you try to find a periodic solution? Why? 
+
 2. Compute the linear optics functions for the transfer line assuming ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) at the start of it. What are the values of the linear optics functions at the end of the transfer line ($\beta_{x, end1}$ , $\alpha_{x, end1}$ , $\beta_{y, end1}$ , $\alpha_{y, end1}$)?
 
-In order to define the linear optics functions at the beginning of the beamline:
+	In order to define the linear optics functions at the beginning of the beamline:
 
-	twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??;
+		twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??;
 
 3. Starting from ($\beta_{x}$ , $\alpha_{x}$ , $\beta_{y}$ , $\alpha_{y}$) = (1 m, 0, 2 m, 0) match the line to get at the end of the transfer line the following optics ($\beta_{x, end2}$ , $\alpha_{x, end2}$ , $\beta_{y, end2}$ , $\alpha_{y, end2}$) = (2 m, 0, 1 m, 0).
 
-In order to perform a local matching, use the commands below:
+	In order to perform a local matching, use the commands below:
 
 		match, sequence = ??;
 		constraint, range = #e, betx = ??;

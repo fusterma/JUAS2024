@@ -26,7 +26,8 @@ Questions:
      
 
 2. Using the $\beta$-function plot obtained, can you estimate the phase advance of the cell? How does this value compare to the tune computed by MAD-X.
-   $\phi (s)=\int_0^s \frac{1}{\beta (s)} ds$
+   
+   $\psi (s)=\int_0^s \frac{1}{\beta (s)} ds$
     
 4. Try to run the twiss command with $E_{tot}$ = 0.7 GeV. What is the MAD-X error message? And if you change the focal length to 20 m? Note that the error messages could appear in the jupyter notebook or in the terminal from which you launched the JupyterLab.
 
@@ -67,10 +68,6 @@ Questions:
 
 The main goal of this tutorial is to install dipole magnets in the FODO cell designed in Tutorial 1 to build a circular machine as well as to study the impact of the dipoles into the linear optics functions. In addition, the MAD-X matching module will be used to define the required quadrupole's strength for getting a desired tune of the machine. The tune is a crucial parameter in the design of a circular machine for getting the desired beam quality and stability. 
 
-Questions:
-
-1. Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
-
 <p align="center">
 <img src="Figures/Tutorial3_FODO.png" width="60%"/>
 </p>
@@ -78,6 +75,10 @@ Questions:
 <p align="center">
 Figure 4: Scheme of a FODO cell with dipoles.
 </p>
+
+Questions:
+
+1. Consider the first FODO cell designed in Tutorial 2 and add 4 sector dipoles of 15 m long, $L_d$, assuming a drift space between the magnets as illustrated in Fig. 4.  For computing the required bending angle, consider a ring with 736 dipoles with equal bending angles.
 
 	In order to install the dipoles in the lattice, first define the new element with the appropriate MAD-X command:
 
@@ -107,7 +108,7 @@ Figure 4: Scheme of a FODO cell with dipoles.
 
 ## Tutorial 4: Natural chromaticity
 
-The main goal of this tutorial is to study the impact of natural chromaticity of a FODO cell on the particles' beam dynamics by means of particle tracking studies. Fig. 5 illustrates the chromaticity concept in a quadrupole magnet. Orange and blue lines correspond to off-momentum particles and the green line represents the on-momentum particle. In this illustration, we observe an spread in the focusing effect of the quadrupole, which is caused by the energy spread of the beam, known as chromaticity.
+The main goal of this tutorial is to study the impact of the natural chromaticity of a FODO cell on the particles' beam dynamics by means of particle tracking studies. Fig. 5 illustrates the chromaticity concept in a quadrupole magnet. Orange and blue lines correspond to off-momentum particles and the green line represents the on-momentum particle. In this illustration, we observe an spread in the focusing effect of the quadrupole, which is caused by the energy spread of the beam, known as chromaticity.
 
 <p align="center">
 <img src="Figures/Tutorial4_chroma.jpg" width="50%"/>
@@ -120,7 +121,7 @@ In order to do this tutorial, we will use as starting point, the thin lens versi
 
 Questions:
 
-1. Run the Tutorial4.madx file to compute the twiss of the new thin lens lattice. Using the chromaticities obtained, compute the tunes for $\Delta p / p = 10^{-3}$.Using the chromaticity computed using the twiss command, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
+1. Run the Tutorial4.madx file to compute the twiss of the new thin lens lattice. Using the chromaticity computed using the twiss command, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
 
      $\Delta Q = dq \times \frac{\Delta p}{p}$
 

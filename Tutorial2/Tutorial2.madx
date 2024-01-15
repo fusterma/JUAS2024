@@ -4,7 +4,7 @@
 
 l_cell=100;
 quadrupolelength=5;
-myk:=???/l_cell/quadrupolelength;
+myk:=???;
 
 ! *********************************************************************
 ! Definition of magnets

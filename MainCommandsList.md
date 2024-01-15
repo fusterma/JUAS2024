@@ -4,13 +4,13 @@
 
 ## MAD-X commands
 
-Lattice elements definition:
+**Lattice elements definition:**
         
         mb : sbend, angle = ??, l = ??; 
         mq : quadrupole, k1 = ??, l = ??;
         ms : sextupole, k2 = ??, l = ??;
 
-Sequence definition:
+**Sequence definition:**
 
         sequencename : sequence, refer = centre, l = ??;
         element1: elementType1, at = ??;
@@ -18,26 +18,27 @@ Sequence definition:
         ...
         endsequence;
 
-Sequence activation:
+**Sequence activation:**
 
         use, sequence = sequencename;
 
-Call an external file:
+**Call an external file:**
 
         call, file = name;
 
-Beam definition:
+**Beam definition:**
 
         beam, particle = proton, energy = 7000;
 
-Twiss action:
+**Twiss action:**
 
         twiss, sequence = name, centre, file = filename.txt, table = name;
         twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file = filename.txt, table = name;
         select, flag = twiss, column = name, keyword, s, betx, bety;
         plot, haxis = s, vaxis = betx, color = 100, file = name;
    
-Matching action:
+**Matching action:**
+
 
         match, sequence = ??;
         global, q1 = ??;
@@ -47,6 +48,7 @@ Matching action:
         lmdif, call = 50, tolerance = 1e-6;
         endmatch;
 	
+	
  	match, sequence = ??;
 	constraint, range = #e, betx = ??;
  	constraint, range = #e, alfx = ??;
@@ -55,8 +57,10 @@ Matching action:
     	lmdif, call = 50, tolerance = 1e-6;
      	endmatch;
 
- Tracking action:
+
+** Tracking action:**
  	
+	
   	track, dump, file = name, deltap = ??;
    	start, x = ??, px = ?? , y = ??, py = ??;
     	start, x = ??, px = ?? , y = ??, py = ??;
@@ -65,15 +69,15 @@ Matching action:
         
 ## Cpymad library functions
 
-####  First, we need to load the cpymad library
+**First, we need to load the cpymad library:**
 	
 	from cpymad.madx import Madx
 	
-#### Next, we need to instantiate the MAD-X process
+**Next, we need to instantiate the MAD-X process:**
  	
 	madx = Madx()
   	
-#### Main functions to communicate with the MAD-X process
+**Main functions to communicate with the MAD-X process:**
 
 	madx.call('filename')
 	
@@ -85,15 +89,19 @@ Matching action:
  
 ## Python plot commands
 
-	#### To change the size of the plot window
+**To change the size of the plot window*:*
+
 	plt.rcParams['figure.dpi'] = 100
 
-	#### Plot command
+**Plot command:**
+
 	plt.plot(x,y,'ob',label='Example')
 
-	#### Adding labels
+**Adding labels:**
+
 	plt.xlabel('s[m]')
 	plt.ylabel('[m]')
 	
-	#### Adding a legend
+**Adding a legend:**
+
 	plt.legend(loc='best')     

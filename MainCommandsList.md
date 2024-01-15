@@ -39,15 +39,15 @@
    
 **Matching action:**
 
-   	match, sequence = ??;
+	match, sequence = ??;
         global, q1 = ??;
         global, q2 = ??;
         vary, name = ??, step = 0.00001;
         vary, name = ??, step = 0.00001;
         lmdif, call = 50, tolerance = 1e-6;
         endmatch;
-		
-   	match, sequence = ??;
+        
+        match, sequence = ??;
 	constraint, range = #e, betx = ??;
  	constraint, range = #e, alfx = ??;
   	vary, name = ??, step = 0.00001;
@@ -57,8 +57,8 @@
 
 
 ** Tracking action:**
- 		
-   	track, dump, file = name, deltap = ??;
+	
+	track, dump, file = name, deltap = ??;
    	start, x = ??, px = ?? , y = ??, py = ??;
     	start, x = ??, px = ?? , y = ??, py = ??;
       	run, turns = 100;
@@ -80,7 +80,7 @@
 	
    	madx.input('MAD-X commands')
 	
-   	madx.table.twiss.dframe()
+	madx.table.twiss.dframe()
     	madx.table.twiss.dframe()
 
  

@@ -65,11 +65,20 @@ Matching action:
         
 ## Cpymad library functions
 
-
+####  First, we need to load the cpymad library
+	
 	from cpymad.madx import Madx
- 	madx = Madx()
-  	madx.call('filename')
+	
+#### Next, we need to instantiate the MAD-X process
+ 	
+	madx = Madx()
+  	
+#### Main functions to communicate with the MAD-X process
+
+	madx.call('filename')
+	
    	madx.input('MAD-X commands')
+	
    	madx.table.twiss.dframe()
     	madx.table.twiss.dframe()
 

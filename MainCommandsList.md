@@ -32,7 +32,7 @@
 
 **Twiss action:**
 
-        twiss, sequence = name, centre, file = filename.txt, table = name;
+	twiss, sequence = name, centre, file = filename.txt, table = name;
         twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file = filename.txt, table = name;
         select, flag = twiss, column = name, keyword, s, betx, bety;
         plot, haxis = s, vaxis = betx, color = 100, file = name;
@@ -40,28 +40,28 @@
 **Matching action:**
 
 	match, sequence = ??;
-        global, q1 = ??;
-        global, q2 = ??;
-        vary, name = ??, step = 0.00001;
-        vary, name = ??, step = 0.00001;
-        lmdif, call = 50, tolerance = 1e-6;
-        endmatch;
-        
-        match, sequence = ??;
+	global, q1 = ??;
+	global, q2 = ??;
+	vary, name = ??, step = 0.00001;
+	vary, name = ??, step = 0.00001;
+	lmdif, call = 50, tolerance = 1e-6;
+	endmatch;
+	
+	match, sequence = ??;
 	constraint, range = #e, betx = ??;
- 	constraint, range = #e, alfx = ??;
-  	vary, name = ??, step = 0.00001;
-   	vary, name = ??, step = 0.00001;
-    	lmdif, call = 50, tolerance = 1e-6;
-     	endmatch;
+	constraint, range = #e, alfx = ??;
+	vary, name = ??, step = 0.00001;
+	vary, name = ??, step = 0.00001;
+	lmdif, call = 50, tolerance = 1e-6;
+	endmatch;
 
 
 ** Tracking action:**
-	
+
 	track, dump, file = name, deltap = ??;
-   	start, x = ??, px = ?? , y = ??, py = ??;
-    	start, x = ??, px = ?? , y = ??, py = ??;
-      	run, turns = 100;
+	start, x = ??, px = ?? , y = ??, py = ??;
+	start, x = ??, px = ?? , y = ??, py = ??;
+	run, turns = 100;
 
         
 ## Cpymad library functions
@@ -78,7 +78,8 @@
 
 	madx.call('filename')
 	
-   	madx.input('MAD-X commands')
+	
+	madx.input('MAD-X commands')
 	
 	madx.table.twiss.dframe()
     	madx.table.twiss.dframe()

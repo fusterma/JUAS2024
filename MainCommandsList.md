@@ -39,17 +39,15 @@
    
 **Matching action:**
 
-
-        match, sequence = ??;
+   	match, sequence = ??;
         global, q1 = ??;
         global, q2 = ??;
         vary, name = ??, step = 0.00001;
         vary, name = ??, step = 0.00001;
         lmdif, call = 50, tolerance = 1e-6;
         endmatch;
-	
-	
- 	match, sequence = ??;
+		
+   	match, sequence = ??;
 	constraint, range = #e, betx = ??;
  	constraint, range = #e, alfx = ??;
   	vary, name = ??, step = 0.00001;
@@ -59,9 +57,8 @@
 
 
 ** Tracking action:**
- 	
-	
-  	track, dump, file = name, deltap = ??;
+ 		
+   	track, dump, file = name, deltap = ??;
    	start, x = ??, px = ?? , y = ??, py = ??;
     	start, x = ??, px = ?? , y = ??, py = ??;
       	run, turns = 100;
@@ -89,7 +86,7 @@
  
 ## Python plot commands
 
-**To change the size of the plot window*:*
+**To change the size of the plot window:**
 
 	plt.rcParams['figure.dpi'] = 100
 

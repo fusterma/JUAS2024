@@ -56,7 +56,7 @@ twiss;
 ! Makethin
 ! *********************************************************************
 
-select, flag=makethin, slice=5;
+select, flag=makethin, slice=10;
 makethin, sequence = myCell;
 use, sequence=myCell;
 

@@ -167,9 +167,9 @@ Questions:
 
 	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by 	powering the two sextupoles. 
 	 
-2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation: 
-
-     $\xi = \frac{1}{4\pi} (\beta_{x,s1} k2_1 d_{x,s1} ) $
+2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation:
+	
+ 	$\sigma_{x,y}=\sqrt{\frac{\beta_{x,y}\epsilon_n^{x,y}}{\gamma}}$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 

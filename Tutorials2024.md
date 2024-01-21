@@ -153,6 +153,10 @@ Figure 6: Chromaticity correction scheme.
 Figure 7: FODO cell with dipoles and sextupoles scheme.
 </p>
 
+<p align="center">
+<img src="Figures/chromaformula.png" width="50%"/>
+</p>
+
 Questions:
 
 1.  Install two 0.5 m long sextupoles attached to the two quadrupoles. 
@@ -167,11 +171,15 @@ Questions:
 
 	Then, with a MAD-X matching block adjust the vertical and horizontal chromaticity of the cell (global parameters: DQ1 and DQ2) to zero, by 	powering the two sextupoles. 
 	 
+<<<<<<< HEAD
+2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the equation above.  Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
+=======
 2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation:
 	
  	$\xi = \frac{1}{4\pi}(\beta_{x}(s1) k2_1 d_{x}(s1)$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
+>>>>>>> 18f528b9f5ad962cd98686834ee02a28b0f313ce
 
 3. Track two particles, one with initial coordinates x, y, px, py = (1 mm, 1 mm, 0, 0) and another one with initial coordinates x, y, px, py = (100 mm, 100 mm, 0, 0) and both with $\Delta p/p = 0.01$ for 100 turns. Plot the horizontal and vertical phase space, x-px and y-py respectively. Did you manage to recover the original tune for the off-momentum particle from Tutorial 4? Do you see the tunes? What is going on?
 

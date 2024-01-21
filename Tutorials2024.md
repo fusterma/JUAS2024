@@ -169,7 +169,7 @@ Questions:
 	 
 2. Using the strength of the sextupoles and the linear optics functions ($\beta$-function and dispersion) at the sextupole' location, evaluate the sextupole's contribution to the chromaticity on the horizontal plane using the following equation:
 	
- 	$\xi = \frac{1}{4\pi} (\beta_{x,s1} k2_1$ $d_{x,s1})$
+ 	$\xi = \frac{1}{4\pi}$~$(\beta_{x,s1}$~$k2_1$~$d_{x,s1})$
     
 Then, compare the obtained values with the chromaticity value obtained in Tutorial 4.
 
